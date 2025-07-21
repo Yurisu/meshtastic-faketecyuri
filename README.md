@@ -100,7 +100,7 @@ PCB渲染图
 
 原理图 
 
-![image](fake_yuri_PCB/20250721210935.jpg)  
+![image](image/20250721210935.jpg)  
 
 功耗测试数据
 
