@@ -7,7 +7,7 @@
 
 ## 与fake对比
 
-|![image](image/20250114_01.JPG)  
+|![image](image/20250114_01.jpg)  
 
 ## 功能模块
 ### 1. 集成太阳能充电
@@ -83,10 +83,10 @@ v1.1 改进内容
 
 硬件焊接指南
 
-|![image](image/20250114_003653.JPG)  
-|![image](image/20250114_003659.JPG)  
-|![image](image/20250114_005227.JPG)  
-|![image](image/20250114_005517.JPG)  
+|![image](image/20250114_003653.jpg)  
+|![image](image/20250114_003659.jpg)  
+|![image](image/20250114_005227.jpg)  
+|![image](image/20250114_005517.jpg)  
 
 固件烧录步骤
 
@@ -94,12 +94,12 @@ v1.1 改进内容
 
 PCB实物图
 
-|![image](image/20250115_203856.JPG)  
+|![image](image/20250115_203856.jpg)  
 
 PCB渲染图
  
-|![image](fake_yuri_PCB/PCB_TOP.JPG)  
-|![image](fake_yuri_PCB/PCB_BOM.JPG)  
+|![image](fake_yuri_PCB/PCB_TOP.jpg)  
+|![image](fake_yuri_PCB/PCB_BOM.jpg)  
 
 原理图 
 
