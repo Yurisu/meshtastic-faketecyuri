@@ -53,9 +53,11 @@ GPS开关
 ### 3. GPS硬件
 | 组件 | 型号 | 备注 |
 | :------------ | :---------------------------- | :---------------------------- |
-| 主控 | ProMicro NRF52840 | 购买链接 |
+| 主控 | ProMicro NRF52840 | [Promicro NRF52840开发板排针无焊](https://item.taobao.com/item.htm?id=752027856883&_u=e1fg9to98d5)
+ |
 | GPS | ATGM336H-5N71 | [gps模块北斗3单片机ATGM336H-5N71模块+天线](https://item.taobao.com/item.htm?id=649721823963&_u=e1fg9to3077) |
-| 屏幕 | 0.96" SSD1306 OLED | 购买链接 |
+| 屏幕 | 0.96" SSD1306 OLED | [0.96寸oled显示屏模块iic接口](https://item.taobao.com/item.htm?id=537849751788&_u=e1fg9to677b)
+ |
 
 
 
