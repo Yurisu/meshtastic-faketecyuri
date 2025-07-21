@@ -87,25 +87,20 @@ v1.1 改进内容
 
 硬件焊接指南
 
-|![image](image/20250114_003653.JPG)  
-|![image](image/20250114_003659.JPG)  
-|![image](image/20250114_005227.JPG)  
-|![image](image/20250114_005517.JPG)  
-
-固件烧录步骤
-
-基础配置说明
+![image](image/20250114_003653.JPG)    ![image](image/20250114_003659.JPG)  
+![image](image/20250114_005227.JPG)    ![image](image/20250114_005517.JPG)  
 
 PCB实物图
 
-|![image](image/20250115_203856.JPG)  
+![image](image/20250115_203856.JPG)  
 
 PCB渲染图
  
-|![image](fake_yuri_PCB/PCB_TOP.JPG)  
-|![image](fake_yuri_PCB/PCB_BOM.JPG)  
+![image](fake_yuri_PCB/PCB_TOP.JPG)  ![image](fake_yuri_PCB/PCB_BOM.JPG)  
 
 原理图 
+
+![image](fake_yuri_PCB/20250721210935.jpg)  
 
 功耗测试数据
 
@@ -115,13 +110,9 @@ Bootloader
 
 Meshtastic固件编译指南
 
-
-
 已验证的硬件组合
 
 已知兼容性问题说明
-
-
 
 预留IO口功能定义
 
