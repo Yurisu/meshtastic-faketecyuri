@@ -104,6 +104,8 @@ PCB渲染图
 
 功耗测试数据
 
+https://meshcn.net/Meshtastic-LoRa-RF-Module-Power-Consumption-Test/
+
 通信距离实测数据
 
 Bootloader
