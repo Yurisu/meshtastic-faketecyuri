@@ -106,6 +106,10 @@ PCB渲染图
 
 https://meshcn.net/Meshtastic-LoRa-RF-Module-Power-Consumption-Test/
 
+贴片物料表
+
+https://github.com/Yurisu/meshtastic-faketecyuri/blob/main/fake_yuri_PCB/BOM_faketec52840.xls
+
 通信距离实测数据
 
 Bootloader
