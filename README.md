@@ -103,16 +103,18 @@ PCB渲染图
 ![image](image/20250721210935.jpg)  
 
 功耗测试数据
-
-https://meshcn.net/Meshtastic-LoRa-RF-Module-Power-Consumption-Test/
+  https://meshcn.net/Meshtastic-LoRa-RF-Module-Power-Consumption-Test/
 
 贴片物料表
-
-https://github.com/Yurisu/meshtastic-faketecyuri/blob/main/fake_yuri_PCB/BOM_faketec52840.xls
+  https://github.com/Yurisu/meshtastic-faketecyuri/blob/main/fake_yuri_PCB/BOM_faketec52840.xls
 
 通信距离实测数据
 
 Bootloader
+  https://nicekeyboards.com/docs/nice-nano/getting-started/
+  CMD:
+  adafruit-nrfutil dfu serial -p COM26 -pkg nice_nano_bootloader-0.9.2_s140_6.1.1.zip
+
 
 Meshtastic固件编译指南
 
@@ -125,8 +127,7 @@ Meshtastic固件编译指南
 传感器扩展方案
 
 社区支持信息
-
-应用场景说明
+https://meshcn.net/
 
 贡献者指南
 
