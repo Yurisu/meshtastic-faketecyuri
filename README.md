@@ -100,7 +100,7 @@ PCB渲染图
 
 原理图 
 
-![image](image/20250721210935.jpg)  
+![image](image/faketecyuri.png)  
 
 功耗测试数据
   https://meshcn.net/Meshtastic-LoRa-RF-Module-Power-Consumption-Test/
