@@ -1,133 +1,156 @@
-# Meshtastic 低成本控制器开源项目
+# Meshtastic Low-Cost Controller Open Source Project
+
+> 🌐 [中文版本 / Chinese Version](README_CN.md)
+
+![image](image/20250116_220224.JPG)
+
+## Project Overview
+
+A low-cost communication controller solution based on the Meshtastic protocol. It integrates solar charging, GPS positioning, and LoRa communication, making it ideal for IoT applications, off-grid communication, and especially solar-powered nodes.
+
+One PCB is compatible with nearly all modules available on the market (great for budget builds).
+
+This project is derived from https://github.com/gargomoma/fakeTec_pcb.
+
+## Comparison with the Original fakeTec
+
+![image](image/20250114_01.jpg)
+
+## Feature Modules
+
+### 1. Integrated Solar Charging
+
+- [CN3163 Charge Management IC](https://item.szlcsc.com/582671.html?fromZone=s_s__%2522C559031%2522&spm=sc.gb.xh1.zy.n___sc.hm.hd.ss&t=1739525886502&s=1739525886502&lcsc_vid=FgJaXlFRTwdWBgAAEVBdAlEARwMIVVxUFVENAQdTRAAxVlNVTlRcUlxfR1FbXjtW)
+
+- Temperature protection range: 0–55°C (set via onboard NTC)
+
+- NTC can be removed and replaced with the battery's internal NTC
+
+- Current limiting resistor: 1.2KΩ (1000mA)
+
+- Constant charge voltage: 4.2V
+
+- Input voltage: 4.4–6V
+
+- Dual status indicator outputs: charging and charge-complete
 
 
-![image](image/20250116_220224.JPG)  
+### 2. External Notification Components
 
-## 项目简介
-基于Meshtastic协议的低成本通信控制器解决方案，集成太阳能充电、GPS定位和LoRa通信功能，适用于物联网、野外通信等场景。尤其使用与太阳能节点。
-并且这个项目一个PCB就可以兼容几乎市场上可以买到的（可以薅羊毛的）所有模块。
+**Buzzer**
+- Driven via MOSFET (with freewheeling diode) — GPIO **38**
+  Must be configured as `38` in both the **Device** page and the **External Notification** page.
 
-该项目源自https://github.com/gargomoma/fakeTec_pcb.
+**LED**
+- External white LED — GPIO **33**
+  Configure as `33` in the **External Notification** page only.
 
-## 与fake对比
+**User Button**
+- Button KEY — GPIO **32** (default)
+  No configuration needed.
 
-![image](image/20250114_01.jpg)  
-
-## 功能模块
-### 1. 集成太阳能充电
-
-  - [CN3163充电管理IC](https://item.szlcsc.com/582671.html?fromZone=s_s__%2522C559031%2522&spm=sc.gb.xh1.zy.n___sc.hm.hd.ss&t=1739525886502&s=1739525886502&lcsc_vid=FgJaXlFRTwdWBgAAEVBdAlEARwMIVVxUFVENAQdTRAAxVlNVTlRcUlxfR1FbXjtW)
-  
-  - 温度保护范围：0-55°C（板载NTC设定）
-  
-  - 可拆除NTC,替换为电池内部NTC
-  
-  - 限流电阻：1.2KΩ（1000mA）
-  
-  - 充电恒压电压：4.2V
-  
-  - 输入电压:4.4~6V
-  
-  - 充电状态和充电结束状态双指示输出
+**GPS Power Switch**
+- GPS enable/disable driven via MOSFET
+  Configure in the **Position** page: TX = `20`, RX = `22`, EN = `24`
 
 
-### 2. 集成外部通知部件 External Notification
+### 3. GPS Hardware
 
-蜂鸣器
-- 通过MOS管驱动蜂鸣器（增加了续流二极管)（38）
-  需要在Device页面以及External Notification页面同时配置为38
-
-LED
-- 外部白色LED（33）
-  只需在External Notification页面配置为33
-
-用户按键
-- 按键KEY，引脚（32）默认
-  无需配置
-
-GPS开关
-- 通过MOS管驱动GPS开关
-  Position页配置TX为"20"、RX为"22"、EN为"24"
-
-
-### 3. GPS硬件
-| 组件 | 型号 | 备注 |
+| Component | Model | Notes |
 | :------------ | :---------------------------- | :---------------------------- |
-| 主控 | ProMicro NRF52840 | [Promicro NRF52840开发板排针无焊](https://item.taobao.com/item.htm?id=752027856883&_u=e1fg9to98d5) |
-| GPS | ATGM336H-5N71 | [gps模块北斗3单片机ATGM336H-5N71模块+天线](https://item.taobao.com/item.htm?id=649721823963&_u=e1fg9to3077) |
-| 屏幕 | 0.96" SSD1306 OLED | [0.96寸oled显示屏模块iic接口](https://item.taobao.com/item.htm?id=537849751788&_u=e1fg9to677b) |
+| MCU | ProMicro NRF52840 | [ProMicro NRF52840 Dev Board (no soldering)](https://item.taobao.com/item.htm?id=752027856883&_u=e1fg9to98d5) |
+| GPS | ATGM336H-5N71 | [BeiDou/GPS Module + Antenna](https://item.taobao.com/item.htm?id=649721823963&_u=e1fg9to3077) |
+| Display | 0.96" SSD1306 OLED | [0.96" OLED IIC Interface](https://item.taobao.com/item.htm?id=537849751788&_u=e1fg9to677b) |
 
 
+### 4. LoRa Modules
 
-### 4. LoRa模块
-LoRa模块支持
-| 厂家 | 型号 | 备注 |
+Supported LoRa modules:
+
+| Manufacturer | Model | Notes |
 | :------------ | :---------------------------- | :---------------------------- |
-| 成都亿佰特 | E22-400M22S | [购买链接](https://item.taobao.com/item.htm?id=571626367408&_u=e1fg9toef8a) |
-| 成都亿佰特 | E22-400MM22S | [购买链接](https://item.taobao.com/item.htm?id=571626367408&_u=e1fg9toef8a) |
-| 深圳硅传 | SX1268ZTR4(433MHz)_拿样(含弹簧) | [购买链接](https://item.taobao.com/item.htm?id=631724138123&_u=e1fg9to418f) |
-| 河南安信可 | SX1268_Ra-01S含弹簧天线 | [购买链接](https://item.taobao.com/item.htm?id=627657133308&_u=e1fg9toe418) |
-| 惠特自动化 | RA62模块SX1262(433-510MHz) | 没有测试,理论上可以用 [购买链接](https://item.taobao.com/item.htm?id=687692791680&_u=e1fg9toe418) |
+| EByte (Chengdu) | E22-400M22S | [Buy Link](https://item.taobao.com/item.htm?id=571626367408&_u=e1fg9toef8a) |
+| EByte (Chengdu) | E22-400MM22S | [Buy Link](https://item.taobao.com/item.htm?id=571626367408&_u=e1fg9toef8a) |
+| Silicone Power (Shenzhen) | SX1268ZTR4 (433MHz) w/ spring antenna | [Buy Link](https://item.taobao.com/item.htm?id=631724138123&_u=e1fg9to418f) |
+| Anxinke (Henan) | SX1268 Ra-01S w/ spring antenna | [Buy Link](https://item.taobao.com/item.htm?id=627657133308&_u=e1fg9toe418) |
+| Huitt Automation | RA62 Module SX1262 (433–510MHz) | Untested, should work in theory. [Buy Link](https://item.taobao.com/item.htm?id=687692791680&_u=e1fg9toe418) |
 
-如果买 安信可SX1268_Ra-01S含弹簧天线,买到的天线是433的话,自己剪去3圈半就变成480了.
-
-
-### 5. 版本更新
-v1.1 改进内容
-
-- 增加MOS管下拉电阻，消除漏电流
-
-- GPS插座排序修改可以直接对ATGM336H模块
-
-- 太阳能充电电流提升至1A,注意电池容量小于1Ah的需要把电流改小，一般是电池容量的0.2~0.5倍较为合适
-
-- 增加了MeshCN LOGO 
-
-### 6. 快速入门
-
-硬件焊接指南
-
-![image](image/20250114_003653.JPG)    ![image](image/20250114_003659.JPG)  
-![image](image/20250114_005227.JPG)    ![image](image/20250114_005517.JPG)  
-
-PCB实物图
-
-![image](image/20250115_203856.JPG)  
-
-PCB渲染图
- 
-![image](fake_yuri_PCB/PCB_TOP.JPG)  ![image](fake_yuri_PCB/PCB_BOM.JPG)  
-
-原理图 
-
-![image](image/faketecyuri.png)  
-
-功耗测试数据
-  https://meshcn.net/Meshtastic-LoRa-RF-Module-Power-Consumption-Test/
-
-贴片物料表
-  https://github.com/Yurisu/meshtastic-faketecyuri/blob/main/fake_yuri_PCB/BOM_faketec52840.xls
-
-通信距离实测数据
-
-Bootloader
-  https://nicekeyboards.com/docs/nice-nano/getting-started/
-  CMD:
-  adafruit-nrfutil dfu serial -p COM26 -pkg nice_nano_bootloader-0.9.2_s140_6.1.1.zip
+> **Tip:** If you purchase the Anxinke SX1268 Ra-01S and the included antenna is tuned for 433MHz, trimming 3.5 coils will retune it to approximately 480MHz.
 
 
-Meshtastic固件编译指南
+### 5. Changelog
 
-已验证的硬件组合
+**v1.1 Improvements**
 
-已知兼容性问题说明
+- Added MOSFET pull-down resistors to eliminate leakage current
 
-预留IO口功能定义
+- Reordered GPS connector pinout for direct compatibility with the ATGM336H module
 
-传感器扩展方案
+- Solar charging current increased to 1A — note: for batteries under 1Ah, reduce the charge current. A rate of 0.2×–0.5× battery capacity is recommended.
 
-社区支持信息
+- Added MeshCN logo to PCB silkscreen
+
+
+### 6. Quick Start
+
+**Soldering Guide**
+
+![image](image/20250114_003653.JPG)    ![image](image/20250114_003659.JPG)
+![image](image/20250114_005227.JPG)    ![image](image/20250114_005517.JPG)
+
+**PCB Photo**
+
+![image](image/20250115_203856.JPG)
+
+**PCB Render**
+
+![image](fake_yuri_PCB/PCB_TOP.JPG)  ![image](fake_yuri_PCB/PCB_BOM.JPG)
+
+**Schematic**
+
+![image](image/faketecyuri.png)
+
+**Power Consumption Test Data**
+https://meshcn.net/Meshtastic-LoRa-RF-Module-Power-Consumption-Test/
+
+**SMD BOM**
+https://github.com/Yurisu/meshtastic-faketecyuri/blob/main/fake_yuri_PCB/BOM_faketec52840.xls
+
+**Real-World Communication Range Tests**
+
+*(Coming soon)*
+
+**Bootloader**
+https://nicekeyboards.com/docs/nice-nano/getting-started/
+
+Flash command:
+```
+adafruit-nrfutil dfu serial -p COM26 -pkg nice_nano_bootloader-0.9.2_s140_6.1.1.zip
+```
+
+**Meshtastic Firmware Compilation Guide**
+
+*(Coming soon)*
+
+**Verified Hardware Combinations**
+
+*(Coming soon)*
+
+**Known Compatibility Issues**
+
+*(Coming soon)*
+
+**Reserved IO Pin Definitions**
+
+*(Coming soon)*
+
+**Sensor Expansion Options**
+
+*(Coming soon)*
+
+**Community Support**
 https://meshcn.net/
 
-贡献者指南
+**Contributing**
 
+*(Coming soon)*
